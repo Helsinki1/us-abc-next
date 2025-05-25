@@ -23,29 +23,24 @@ export default function Courses() {
   const [openTab, setOpenTab] = useState(-1);
 
   return (
-    <div className="bg-slate-200 h-full min-h-screen w-full">
-      <div className="relative w-full" style={{minHeight: '450px'}}>
+    <div className="bg-blue-100 h-full min-h-screen w-full">
+      <div className="relative w-full" style={{minHeight: '500px'}}>
         <Image
             src="/coursesBanner.jpg"
             alt="Courses Banner"
             fill
             className="object-cover w-full h-full"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-20">
-          <h1 className="text-white text-5xl font-bold">
-            Our Courses
-          </h1>
-        </div>
       </div>
 
       <div className="flex flex-col items-center justify-between mt-10">
 
-        <div className="bg-slate-300 rounded-3xl w-7/12 h-auto p-5">
-            <label className="text-gray-700 text-3xl font-bold">US abc 课程</label>
+        <div className="bg-white rounded-3xl w-7/12 h-auto p-5">
+            <label className="text-purple-900 text-3xl font-bold">US abc 课程</label>
             <p className="text-gray-700 text-lg sm:text-sm md:text-md xl:text-xl mt-3">{text1}</p>
         </div>
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===1)? -1:1))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===1)? -1:1))}>
             ↓ Wonders系列教材 K-6
             <svg
                 className={`h-5 w-5 transform ${(openTab===1)? "rotate-180" : ""} transition-transform`}
@@ -55,7 +50,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===1) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide1pic.webp"
                     alt="Wonders教材图片"
@@ -67,7 +62,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===2)? -1:2))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===2)? -1:2))}>
             ↓ 剑桥KET
             <svg
                 className={`h-5 w-5 transform ${(openTab===2)? "rotate-180" : ""} transition-transform`}
@@ -77,7 +72,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===2) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide2pic.jpg"
                     alt="Wonders"
@@ -89,7 +84,7 @@ export default function Courses() {
             </div>
         )}
         
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===3)? -1:3))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===3)? -1:3))}>
             ↓ 剑桥PET
             <svg
                 className={`h-5 w-5 transform ${(openTab===3)? "rotate-180" : ""} transition-transform`}
@@ -99,7 +94,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===3) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide3pic.webp"
                     alt="Wonders教材图片"
@@ -111,7 +106,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===4)? -1:4))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===4)? -1:4))}>
             ↓ 基础口语
             <svg
                 className={`h-5 w-5 transform ${(openTab===4)? "rotate-180" : ""} transition-transform`}
@@ -121,7 +116,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===4) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide4pic.jpg"
                     alt="Wonders教材图片"
@@ -133,7 +128,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===5)? -1:5))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===5)? -1:5))}>
             ↓ 新概念英语
             <svg
                 className={`h-5 w-5 transform ${(openTab===5)? "rotate-180" : ""} transition-transform`}
@@ -143,7 +138,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===5) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide5pic.webp"
                     alt="Wonders教材图片"
@@ -159,7 +154,7 @@ export default function Courses() {
             </div>
         )}
         
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===6)? -1:6))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===6)? -1:6))}>
             ↓ 新语法课程
             <svg
                 className={`h-5 w-5 transform ${(openTab===6)? "rotate-180" : ""} transition-transform`}
@@ -169,7 +164,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===6) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide6pic.jpg"
                     alt="Wonders教材图片"
@@ -181,7 +176,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===7)? -1:7))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===7)? -1:7))}>
             ↓ 剑桥Kids Box系列（共三册）
             <svg
                 className={`h-5 w-5 transform ${(openTab===7)? "rotate-180" : ""} transition-transform`}
@@ -191,7 +186,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===7) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide7pic.jpg"
                     alt="Wonders教材图片"
@@ -203,7 +198,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===8)? -1:8))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===8)? -1:8))}>
             ↓ 词汇课程
             <svg
                 className={`h-5 w-5 transform ${(openTab===8)? "rotate-180" : ""} transition-transform`}
@@ -213,7 +208,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===8) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide8pic.jpg"
                     alt="Wonders教材图片"
@@ -225,7 +220,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===9)? -1:9))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===9)? -1:9))}>
             ↓ 阅读课程
             <svg
                 className={`h-5 w-5 transform ${(openTab===9)? "rotate-180" : ""} transition-transform`}
@@ -235,7 +230,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===9) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide9pic.jpg"
                     alt="Wonders教材图片"
@@ -247,7 +242,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===10)? -1:10))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===10)? -1:10))}>
             ↓ 雅思/托福备考
             <svg
                 className={`h-5 w-5 transform ${(openTab===10)? "rotate-180" : ""} transition-transform`}
@@ -257,7 +252,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===10) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide10pic.jpg"
                     alt="Wonders教材图片"
@@ -269,7 +264,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===11)? -1:11))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===11)? -1:11))}>
             ↓ SAT/ACT
             <svg
                 className={`h-5 w-5 transform ${(openTab===11)? "rotate-180" : ""} transition-transform`}
@@ -279,7 +274,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===11) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide11pic.png"
                     alt="Wonders教材图片"
@@ -291,7 +286,7 @@ export default function Courses() {
             </div>
         )}
 
-        <button className="bg-slate-300 text-gray-700 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===12)? -1:12))}>
+        <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===12)? -1:12))}>
             ↓ 美国大学申请指导
             <svg
                 className={`h-5 w-5 transform ${(openTab===12)? "rotate-180" : ""} transition-transform`}
@@ -301,7 +296,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===12) && (
-            <div className="bg-slate-300 text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide12pic.png"
                     alt="Wonders教材图片"
@@ -315,7 +310,7 @@ export default function Courses() {
 
         <div className="flex bg-white mt-16 mb-16 w-7/12 h-96 items-center justify-evenly">
             <div className="flex flex-col items-center">
-                <h1 className="text-gray-700 text-3xl">咨询课程</h1>
+                <h1 className="text-purple-900 text-3xl font-bold mb-3">咨询课程</h1>
                 <Image
                     src="/courses/qrcode.jpg"
                     alt="qrcode"

@@ -17,39 +17,99 @@ export default function Home() {
   const [phoneIn, setPhoneIn] = useState<number>(0);
   const [subjectIn, setSubjectIn] = useState<string>("");
 
+  const [index, setIndex] = useState<number>(0);
+  const imgList = [
+    "/homeslide1.png",
+    "/homeslide2.jpg",
+    "/homeslide3.jpg"
+  ]
+
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const changeImage = (newIndex: React.SetStateAction<number>) => {
+    if (isTransitioning) return; // Prevent rapid clicks
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setIndex(newIndex);
+      setIsTransitioning(false);
+    }, 300); // Half of the transition duration
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(prevIndex => 
+        prevIndex === imgList.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // 4 seconds
+  
+    return () => clearInterval(interval);
+  }, [imgList.length, index]);
+
   return (
-    <div className="bg-slate-200 h-full min-h-screen w-full">
-      <div className="relative w-full" style={{minHeight: '450px'}}>
+    <div className="bg-blue-600 h-full min-h-screen w-full">
+      <div className="flex justify-center items-center px-4 relative w-full" style={{minHeight: '500px'}}>
+        <button
+          onClick={() => changeImage((index === 0) ? imgList.length - 1 : index - 1)}
+          className="absolute left-4 z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
         <Image
-          src="/columbiaBanner.jpg"
-          alt="Columbia Banner"
+          src={imgList[index]}
+          alt="Banner"
           fill
-          className="object-cover"
-          priority
+          className={`object-cover transition-opacity duration-700 ease-in-out ${
+            isTransitioning ? 'opacity-50' : 'opacity-100'
+          }`}
+          key={index}
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60">
-          <h1 className="text-white text-4xl">
-            <span className="font-bold">US abc</span> 北美教育
-          </h1>
-          <h1 className="text-white text-2xl mt-1">英语培训和美国留学与升学指导</h1>
-          <button className="bg-red-500 rounded-lg w-28 h-10 mt-5 hover:border hover:border-white">
-            <Link href="/contactus" className="text-white text-lg">
-              预约咨询
-            </Link>
-          </button>
-        </div>
+        <button
+          onClick={() => changeImage((index === imgList.length - 1) ? 0 : index + 1)}
+          className="absolute right-4 z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </div>
       
-      <div className="flex flex-col px-8 md:px-16 lg:px-24 xl:px-40 mt-10 space-y-6 items-center">
+      <div className="bg-slate-200 flex flex-col px-8 md:px-16 lg:px-24 xl:px-40 space-y-6 pt-14 pb-14 items-center">
         {/* First Section - Text + Video */}
-        <div className="flex flex-col lg:flex-row gap-8 items-center">
-          <div className="flex flex-col w-full lg:w-[600px] h-[280px] p-6 rounded-3xl bg-slate-300 shadow-md">
+        <div className="flex flex-col lg:flex-row gap-10 items-center">
+          <div className="flex flex-col w-full lg:w-[620px] h-[320px] p-6 rounded-3xl bg-slate-300 shadow-md">
             <h1 className="text-gray-700 text-xl font-bold leading-tight">
               {title1}
             </h1>
-            <p className="text-gray-700 text-base mt-3 leading-relaxed overflow-hidden">
-              {content1}
-            </p>
+            <h1 className="text-gray-700 text-base mt-3 leading-relaxed overflow-hidden">
+                {content1.split('\n').map((line, index) => (
+                    <p key={index} className="mb-1.5">
+                    {line}
+                    </p>
+                ))}
+            </h1>
           </div>
           <div className="flex-shrink-0">
             <video
@@ -63,7 +123,7 @@ export default function Home() {
 
         {/* Second Section - Text + Image */}
         <div className="flex flex-col lg:flex-row gap-8 items-center">
-          <div className="flex flex-col w-full lg:w-[600px] h-[240px] p-6 rounded-3xl bg-slate-300 shadow-md">
+          <div className="flex flex-col w-full lg:w-[620px] h-[240px] p-6 rounded-3xl bg-slate-300 shadow-md">
             <h1 className="text-gray-700 text-xl font-bold leading-tight">
               {title2}
             </h1>
@@ -85,7 +145,7 @@ export default function Home() {
 
         {/* Third Section - Text + Image */}
         <div className="flex flex-col lg:flex-row gap-8 items-center mb-10">
-          <div className="flex flex-col w-full lg:w-[600px] h-[230px] p-6 rounded-3xl bg-slate-300 shadow-md">
+          <div className="flex flex-col w-full lg:w-[620px] h-[230px] p-6 rounded-3xl bg-slate-300 shadow-md">
             <h1 className="text-gray-700 text-xl font-bold leading-tight">
               {title3}
             </h1>
@@ -107,7 +167,7 @@ export default function Home() {
       </div>
 
 
-      <div className="flex flex-col place-content-center items-center bg-blue-400 w-full mt-16" style={{minHeight: '500px', padding: '3rem 1rem'}}>
+      <div className="flex flex-col place-content-center items-center bg-blue-800 w-full" style={{minHeight: '500px', padding: '3rem 1rem'}}>
         <h1 className="text-white text-3xl font-bold mb-8 text-center">
           免费领取399元在线英语课
         </h1>

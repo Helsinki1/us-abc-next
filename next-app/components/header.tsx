@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Header() {
     return (
-      <div className="bg-white fg-white flex items-center justify-between py-4" style={{padding: '0.5rem 4.5rem'}}>
+      <div className="bg-blue-100 fg-white flex items-center justify-between py-4" style={{padding: '0.5rem 7rem'}}>
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logo-removebg.png"
