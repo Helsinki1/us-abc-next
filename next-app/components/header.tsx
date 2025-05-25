@@ -3,30 +3,39 @@ import Image from "next/image"
 
 export default function Header() {
     return (
-        <header className="flex items-center bg-slate-300 px-4 py-4">
-            <Link href="/">
-                <Image
-                    src="/logo-removebg.png"
-                    alt="logo"
-                    width={18}
-                    height={6}
-                />
-            </Link>
+      <div className="bg-white fg-white flex items-center justify-between py-4" style={{padding: '0.28rem 4.5rem'}}>
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/logo-removebg.png"
+            alt="logo"
+            width={180}
+            height={60}
+            className="h-20 w-auto"
+          />
+        </Link>
 
-            <div className= "flex ml-auto">
-                <Link href="/" className="text-gray-700 hover:underline mr-11 text-lg"> 
+        <div className="flex items-center space-x-8">
+            <Link href="/">
+                <button className="text-gray-700 hover:text-gray-900 hover:underline text-lg font-medium transition-colors px-4 py-2 rounded-xl">
                     首页
-                </Link>
-                <Link href="/courses" className="text-gray-700 hover:underline mr-11 text-lg"> 
+                </button>
+            </Link>
+            <Link href="/courses">
+                <button className="text-gray-700 hover:text-gray-900 hover:underline text-lg font-medium transition-colors px-4 py-2 rounded-xl">
                     课程体系
-                </Link>
-                <Link href="/aboutus" className="text-gray-700 hover:underline mr-11 text-lg">
+                </button>
+            </Link>
+            <Link href="/aboutus">
+                <button className="text-gray-700 hover:text-gray-900 hover:underline text-lg font-medium transition-colors px-4 py-2 rounded-xl">
                     外教团队
-                </Link>
-                <Link href="/contactus" className="text-gray-700 hover:underline mr-11 text-lg">
-                    联系我们 
-                </Link>
-            </div>
-        </header>
+                </button>
+            </Link>
+            <Link href="/contactus">
+                <button className="text-gray-700 hover:text-gray-900 hover:underline text-lg font-medium transition-colors px-4 py-2 rounded-xl">
+                    联系我们
+                </button>
+            </Link>
+        </div>
+      </div>
     )
-}
+  }

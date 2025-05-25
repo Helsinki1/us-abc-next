@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="bg-slate-200 h-full min-h-screen w-full">
-      <div className="relative w-full h-96">
+      <div className="relative w-full" style={{minHeight: '450px'}}>
         <Image
           src="/columbiaBanner.jpg"
           alt="Columbia Banner"
@@ -107,29 +107,36 @@ export default function Home() {
       </div>
 
 
-      <div className=" flex flex-col place-content-center items-center bg-blue-400 w-full h-96 mt-16">
-        <h1 className="text-white text-2xl">
+      <div className="flex flex-col place-content-center items-center bg-blue-400 w-full mt-16" style={{minHeight: '500px', padding: '3rem 1rem'}}>
+        <h1 className="text-white text-3xl font-bold mb-8 text-center">
           免费领取399元在线英语课
         </h1>
-        <input className="mt-4 w-1/3 h-12 p-4"
-          placeholder="您的名字"
-          onChange={(event)=>{setNameIn(event.target.value);}}
-        />
-        <input className="mt-3 w-1/3 h-12 p-4"
-          placeholder="您的微信号"
-          onChange={(event)=>{setNameIn(event.target.value);}}
-        />
-        <input className="mt-3 w-1/3 h-12 p-4"
-          placeholder="您的手机号码"
-          onChange={(event)=>{setNameIn(event.target.value);}}
-        />
-        <input className="mt-3 w-1/3 h-12 p-4"
-          placeholder="想试听的课程"
-          onChange={(event)=>{setNameIn(event.target.value);}}
-        />
-        <button className="bg-red-500 rounded-lg w-28 h-10 mt-5 hover:border text-white font-bold hover:border-white"
-          // onClick={}  ADD EMAIL YOURSELF FUNCTION
-        >
+        
+        <div className="w-full max-w-md space-y-4">
+          <input 
+            className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
+            placeholder="您的名字"
+            onChange={(event) => {setNameIn(event.target.value);}}
+          />
+          <input 
+            className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
+            placeholder="您的微信号"
+            onChange={(event) => {setWechatIn(event.target.value);}}
+          />
+          <input 
+            className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
+            placeholder="您的手机号码"
+            type="tel"
+            onChange={(event) => {setPhoneIn(Number(event.target.value));}}
+          />
+          <input 
+            className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
+            placeholder="想试听的课程"
+            onChange={(event) => {setSubjectIn(event.target.value);}}
+          />
+        </div>
+        
+        <button className="bg-red-500 hover:bg-red-600 rounded-lg px-8 py-3 mt-8 text-white font-bold text-lg transition-colors shadow-lg hover:shadow-xl">
           立即领取
         </button>
       </div>
