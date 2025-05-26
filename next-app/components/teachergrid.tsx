@@ -44,7 +44,7 @@ const TeacherGrid: React.FC<TeacherGridProps> = ({ teachers }) => {
             </h4>
             
             {/* Description */}
-            <p className="text-white text-sm leading-relaxed max-w-md break-words">
+            <p className="text-white text-sm leading-relaxed max-w-md break-words text-left">
               {teacher.description}
             </p>
           </div>

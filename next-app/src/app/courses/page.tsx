@@ -20,6 +20,11 @@ export default function Courses() {
   const [slide11, setSlide11] = useState<string>("SAT/ACT模考题精解以及备考前时间管理和分配。由美国顶尖名校MIT，哈佛及各大藤校学霸主讲。");
   const [slide12, setSlide12] = useState<string>("美国大学申请ED， ERA和Regular大学选择策略。论文撰写技巧和修改润色。由美国顶尖名校MIT，哈佛及各大藤校学霸主讲。");
 
+  const [nameIn, setNameIn] = useState<string>("");
+  const [wechatIn, setWechatIn] = useState<string>("");
+  const [phoneIn, setPhoneIn] = useState<number>(0);
+  const [subjectIn, setSubjectIn] = useState<string>("");
+
   const [openTab, setOpenTab] = useState(-1);
 
   return (
@@ -185,7 +190,7 @@ export default function Courses() {
                     alt="Wonders教材图片"
                     width={230}
                     height={230}
-                    className="mb-3 h-44 w-auto"
+                    className="mb-3 h-44 w-44"
                 />
                 {slide6}
                 <Link href="//share.weiyun.com/LKKDRHxv/" className="text-blue-700 font-bold mt-3">
@@ -345,6 +350,39 @@ export default function Courses() {
                     height={176}
                     className="mb-3 w-64 h-auto"
                 />
+            </div>
+            <div className="flex flex-col place-content-center items-center w-96" style={{minHeight: '500px', padding: '3rem 1rem'}}>
+                <h1 className="text-purple-900 text-2xl font-bold mb-4 text-center">
+                    预约试听
+                </h1>
+                
+                <div className="w-full max-w-md space-y-4">
+                    <input 
+                        className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
+                        placeholder="您的名字"
+                        onChange={(event) => {setNameIn(event.target.value);}}
+                    />
+                    <input 
+                        className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
+                        placeholder="您的微信号"
+                        onChange={(event) => {setWechatIn(event.target.value);}}
+                    />
+                    <input 
+                        className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
+                        placeholder="您的手机号码"
+                        type="tel"
+                        onChange={(event) => {setPhoneIn(Number(event.target.value));}}
+                    />
+                    <input 
+                        className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
+                        placeholder="想试听的课程"
+                        onChange={(event) => {setSubjectIn(event.target.value);}}
+                    />
+                </div>
+                
+                <button className="bg-red-500 hover:bg-red-600 rounded-lg px-7 py-1 mt-4 text-white font-bold text-base transition-colors shadow-lg hover:shadow-xl">
+                    立即领取
+                </button>
             </div>
         </div>
       </div>
