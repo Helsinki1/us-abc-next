@@ -42,19 +42,19 @@ export default function ContactUs() {
           <h1 className="text-white text-3xl mt-10 font-bold">
             联系我们
           </h1>
-          <input className="mt-6 w-2/3 h-12 p-4"
+          <input className="mt-6 w-2/3 h-12 p-4 text-gray-700"
             placeholder="您的名字"
             onChange={(event)=>{setNameIn(event.target.value);}}
           />
-          <input className="mt-3 w-2/3 h-12 p-4"
+          <input className="mt-3 w-2/3 h-12 p-4 text-gray-700"
             placeholder="您的微信号"
             onChange={(event)=>{setNameIn(event.target.value);}}
           />
-          <input className="mt-3 w-2/3 h-12 p-4"
+          <input className="mt-3 w-2/3 h-12 p-4 text-gray-700"
             placeholder="您的手机号码"
             onChange={(event)=>{setNameIn(event.target.value);}}
           />
-          <input className="mt-3 w-2/3 h-12 p-4"
+          <input className="mt-3 w-2/3 h-12 p-4 text-gray-700"
             placeholder="想试听的课程"
             onChange={(event)=>{setNameIn(event.target.value);}}
           />
