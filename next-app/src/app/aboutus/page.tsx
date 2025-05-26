@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function AboutUs() {
 
-  const teachersData: Teacher[] = [
+  const teachersData1: Teacher[] = [
     {
       id: 'emily-001',
       name: 'Emily J.',
@@ -38,6 +38,8 @@ export default function AboutUs() {
       imageUrl: '/teachers/lisa.jpg',
       imageAlt: 'Lisa R. - ESL Teacher'
     },
+  ]
+  const teachersData2: Teacher[] = [
     {
       id: 'alex-005',
       name: 'Alex L.',
@@ -71,6 +73,40 @@ export default function AboutUs() {
       imageAlt: 'Paul W. - Course Designer and ESL Teacher'
     }
   ];
+  const teachersData3: Teacher[] = [
+    {
+      id: 'eric-009',
+      name: 'Eric M.',
+      title: '课程设计师，ESL教师',
+      description: 'Eric毕业于波士顿学院语言文学系， 主要负责课程设计和制作， 擅长将知识点融入笑话，格言来传授， Eric教授过雅思和托福听说读写， 英语口语，剑桥KET/PET课程。美国中小学课程和新概念英语课程.',
+      imageUrl: '/teachers/eric.jpg',
+      imageAlt: 'Eric M. - ESL Teacher'
+    },
+    {
+      id: 'erica-010',
+      name: 'Erica T.',
+      title: '课程设计师，ESL教师i',
+      description: 'Erica毕业于康州大学教育学专业， Erica课上讲解清晰有条理， 擅长借助各种教学软件授课, 教授过雅思和托福的听说读写， 英语口语对话，剑桥KET，PET课程。美国中小学课程， 口语对话和新概念英语课程.',
+      imageUrl: '/teachers/erica.jpg',
+      imageAlt: 'Erica T. - ESL Teacher'
+    },
+    {
+      id: 'lexcea-011',
+      name: 'Lexcea K.',
+      title: '高中课程辅导员，美国升学指导',
+      description: 'Lexcea来自麻省理工， 学习计算机科学专业， Lexcea高中时曾为社团会联合会长， 主要教授托福雅思口语课程，高中数学，高等数学，微积分， SAT/ACT, 高中物理等， Lexcea能提供美国大学申请指导，修改大学申请论文。',
+      imageUrl: '/teachers/lexcea.jpg',
+      imageAlt: 'Lexcea K. - ESL Teacher'
+    },
+    {
+      id: 'angel-012',
+      name: 'Angel M. Y.',
+      title: '高中和大学理科课程辅导老师',
+      description: 'Angel毕业于UC Berkeley物理系， 主要教授大学物理， 量子力学，大学数学，大学微积分和高中物理和高中数学等课程， Angel有多年线上不同课程辅导经验。',
+      imageUrl: '/teachers/angel.png',
+      imageAlt: 'Angel M. Y. - ESL Teacher'
+    }
+  ];
 
   return (
     <div className="bg-slate-50 h-full min-h-screen w-full items-center">
@@ -85,7 +121,7 @@ export default function AboutUs() {
       </div>
 
 
-      <div className="bg-slate-50 flex flex-col h-auto w-3/4 pt-10 pb-10 pl-8 pr-8 ml-52">
+      <div className="bg-slate-50 flex flex-col h-auto w-3/4 pt-14 pb-14 pl-8 pr-8 ml-52">
         <h1 className="text-3xl font-bold text-orange-500 mb-6 text-left">我们的外教团队</h1>
         <h2 className="text-xl font-bold text-orange-500 text-left mb-4">US abc团队的成员包括：</h2>
         <ul className="space-y-3 text-xl text-gray-800">
@@ -100,8 +136,10 @@ export default function AboutUs() {
       </div>
 
 
-      <div className="bg-sky-600">
-        <TeacherGrid teachers={teachersData}></TeacherGrid>
+      <div className="bg-sky-600 pl-96 pr-96 pt-16 pb-16 space-y-12">
+        <TeacherGrid teachers={teachersData1}></TeacherGrid>
+        <TeacherGrid teachers={teachersData2}></TeacherGrid>
+        <TeacherGrid teachers={teachersData3}></TeacherGrid>
       </div>
     </div>
   )
