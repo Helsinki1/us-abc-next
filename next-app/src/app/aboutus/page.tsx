@@ -136,7 +136,7 @@ export default function AboutUs() {
       </div>
 
 
-      <div className="bg-sky-600 pl-96 pr-96 pt-16 pb-16 space-y-12">
+      <div className="bg-sky-600 pl-60 pr-60 pt-16 pb-24 space-y-16">
         <TeacherGrid teachers={teachersData1}></TeacherGrid>
         <TeacherGrid teachers={teachersData2}></TeacherGrid>
         <TeacherGrid teachers={teachersData3}></TeacherGrid>

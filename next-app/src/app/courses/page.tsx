@@ -41,7 +41,7 @@ export default function Courses() {
         </div>
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===1)? -1:1))}>
-            ↓ Wonders系列教材 K-6
+            Wonders系列教材 K-6
             <svg
                 className={`h-5 w-5 transform ${(openTab===1)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -50,7 +50,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===1) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide1pic.webp"
                     alt="Wonders教材图片"
@@ -59,11 +59,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide1}
+                <Link href="//share.weiyun.com/x7P5iUXA/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===2)? -1:2))}>
-            ↓ 剑桥KET
+            剑桥KET
             <svg
                 className={`h-5 w-5 transform ${(openTab===2)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -72,7 +75,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===2) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide2pic.jpg"
                     alt="Wonders"
@@ -81,11 +84,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide2}
+                <Link href="//share.weiyun.com/FlZb2dUJ/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看KET书中内容
+                </Link>
             </div>
         )}
         
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===3)? -1:3))}>
-            ↓ 剑桥PET
+            剑桥PET
             <svg
                 className={`h-5 w-5 transform ${(openTab===3)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -94,7 +100,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===3) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide3pic.webp"
                     alt="Wonders教材图片"
@@ -103,11 +109,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide3}
+                <Link href="//share.weiyun.com/GvmvqQ7Q/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看PET书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===4)? -1:4))}>
-            ↓ 基础口语
+            基础口语
             <svg
                 className={`h-5 w-5 transform ${(openTab===4)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -116,7 +125,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===4) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide4pic.jpg"
                     alt="Wonders教材图片"
@@ -125,11 +134,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide4}
+                <Link href="//share.weiyun.com/i5zPoW2v/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看基础口语书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===5)? -1:5))}>
-            ↓ 新概念英语
+            新概念英语
             <svg
                 className={`h-5 w-5 transform ${(openTab===5)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -138,7 +150,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===5) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide5pic.webp"
                     alt="Wonders教材图片"
@@ -151,11 +163,14 @@ export default function Courses() {
                     {line}
                     </p>
                 ))}
+                <Link href="//share.weiyun.com/PjuaYZuI/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看新概念英语书中内容
+                </Link>
             </div>
         )}
         
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===6)? -1:6))}>
-            ↓ 新语法课程
+            新语法课程
             <svg
                 className={`h-5 w-5 transform ${(openTab===6)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -164,7 +179,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===6) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide6pic.jpg"
                     alt="Wonders教材图片"
@@ -173,11 +188,14 @@ export default function Courses() {
                     className="mb-3 h-44 w-auto"
                 />
                 {slide6}
+                <Link href="//share.weiyun.com/LKKDRHxv/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看语法书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===7)? -1:7))}>
-            ↓ 剑桥Kids Box系列（共三册）
+            剑桥Kids Box系列（共三册）
             <svg
                 className={`h-5 w-5 transform ${(openTab===7)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -186,7 +204,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===7) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide7pic.jpg"
                     alt="Wonders教材图片"
@@ -195,11 +213,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide7}
+                <Link href="//share.weiyun.com/gTHTyoGO/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看Kids Box书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===8)? -1:8))}>
-            ↓ 词汇课程
+            词汇课程
             <svg
                 className={`h-5 w-5 transform ${(openTab===8)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -208,7 +229,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===8) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide8pic.jpg"
                     alt="Wonders教材图片"
@@ -217,11 +238,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide8}
+                <Link href="//share.weiyun.com/o75vuS8b/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===9)? -1:9))}>
-            ↓ 阅读课程
+            阅读课程
             <svg
                 className={`h-5 w-5 transform ${(openTab===9)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -230,7 +254,7 @@ export default function Courses() {
             </svg>
         </button>
         {(openTab===9) && (
-            <div className="bg-white text-gray-700 h-auto w-7/12 p-5 rounded-2xl text-xl">
+            <div className="bg-white text-gray-700 flex flex-col h-auto w-7/12 p-5 rounded-2xl text-xl">
                 <Image
                     src="/courses/slide9pic.jpg"
                     alt="Wonders教材图片"
@@ -239,11 +263,14 @@ export default function Courses() {
                     className="mb-3"
                 />
                 {slide9}
+                <Link href="//share.weiyun.com/zc3C7ZtJ/" className="text-blue-700 font-bold mt-3">
+                    点击此次查看书中内容
+                </Link>
             </div>
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===10)? -1:10))}>
-            ↓ 雅思/托福备考
+            雅思/托福备考
             <svg
                 className={`h-5 w-5 transform ${(openTab===10)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -265,7 +292,7 @@ export default function Courses() {
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===11)? -1:11))}>
-            ↓ SAT/ACT
+            SAT/ACT
             <svg
                 className={`h-5 w-5 transform ${(openTab===11)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
@@ -287,7 +314,7 @@ export default function Courses() {
         )}
 
         <button className="bg-white text-purple-900 text-left p-3 text-2xl font-bold mt-6 w-7/12 h-14 rounded-2xl" onClick={()=>(setOpenTab((openTab===12)? -1:12))}>
-            ↓ 美国大学申请指导
+            美国大学申请指导
             <svg
                 className={`h-5 w-5 transform ${(openTab===12)? "rotate-180" : ""} transition-transform`}
                 viewBox="0 0 20 20" fill="currentColor"
