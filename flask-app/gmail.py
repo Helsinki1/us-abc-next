@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, current_app
 from flask_cors import cross_origin, CORS
-import random, traceback, os, base64, requests
+import os, base64, requests
 from email.mime.text import MIMEText
 from dotenv import load_dotenv
 # Google API imports
