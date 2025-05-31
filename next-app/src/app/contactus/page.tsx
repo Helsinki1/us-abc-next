@@ -20,7 +20,7 @@ export default function ContactUs() {
       }
   
       const response = await axios.post(
-        'http://localhost:5000/email',
+        'https://us-abc-next.onrender.com/email',
         {
           nameIn,
           wechatIn,

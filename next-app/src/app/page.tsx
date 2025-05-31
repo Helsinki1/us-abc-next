@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link"
 import axios from "axios"
 import Image from "next/image"
 import React from 'react';
@@ -59,7 +58,7 @@ export default function Home() {
       }
   
       const response = await axios.post(
-        'http://localhost:5000/email',
+        'https://us-abc-next.onrender.com/email',
         {
           nameIn,
           wechatIn,
