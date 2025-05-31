@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from "next/link"
 import Image from "next/image"
+import axios from "axios"
 import { useState } from 'react'
 
 export default function Courses() {
@@ -22,10 +23,52 @@ export default function Courses() {
 
   const [nameIn, setNameIn] = useState<string>("");
   const [wechatIn, setWechatIn] = useState<string>("");
-  const [phoneIn, setPhoneIn] = useState<number>(0);
+  const [phoneIn, setPhoneIn] = useState<string>("");
   const [subjectIn, setSubjectIn] = useState<string>("");
 
   const [openTab, setOpenTab] = useState(-1);
+
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  
+    try {
+      if (!nameIn || !wechatIn || !phoneIn || !subjectIn) {
+        alert("Phone # must be a number. Please fill in all fields.");
+        return;
+      }
+  
+      const response = await axios.post(
+        'http://localhost:5000/email',
+        {
+          nameIn,
+          wechatIn,
+          phoneIn,
+          subjectIn,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          timeout: 10000, // 10 second timeout
+        }
+      );
+  
+      setNameIn("");
+      setWechatIn("");
+      setPhoneIn("");
+      setSubjectIn("");
+  
+      if (response.status === 201) {
+        alert("Submission successful.");
+      }
+    } catch (error: any) {
+      alert(
+        error.response?.data?.error ||
+        "Error during submission. Please try again."
+      );
+    }
+  };
 
   return (
     <div className="bg-blue-100 h-full min-h-screen w-full">
@@ -356,7 +399,7 @@ export default function Courses() {
                     预约试听
                 </h1>
                 
-                <div className="w-full max-w-md space-y-4">
+                <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
                     <input 
                         className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
                         placeholder="您的名字"
@@ -371,18 +414,18 @@ export default function Courses() {
                         className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
                         placeholder="您的手机号码"
                         type="tel"
-                        onChange={(event) => {setPhoneIn(Number(event.target.value));}}
+                        onChange={(event) => {setPhoneIn(event.target.value);}}
                     />
                     <input 
                         className="w-full h-12 p-3 outline outline-2 outline-red-600 text-gray-700 text-base rounded-lg border-0 focus:ring-2 focus:ring-white"
                         placeholder="想试听的课程"
                         onChange={(event) => {setSubjectIn(event.target.value);}}
                     />
-                </div>
                 
-                <button className="bg-red-500 hover:bg-red-600 rounded-lg px-7 py-1 mt-4 text-white font-bold text-base transition-colors shadow-lg hover:shadow-xl">
-                    立即领取
-                </button>
+                    <button className="bg-red-500 hover:bg-red-600 rounded-lg px-7 py-1 mt-4 text-white font-bold text-base transition-colors shadow-lg hover:shadow-xl">
+                        立即领取
+                    </button>
+                </form>
             </div>
         </div>
       </div>

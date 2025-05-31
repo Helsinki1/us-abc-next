@@ -1,14 +1,55 @@
 "use client"
 import React from 'react'
+import axios from 'axios'
 import {useState} from 'react'
 
 export default function ContactUs() {
 
   const [nameIn, setNameIn] = useState<string>("");
   const [wechatIn, setWechatIn] = useState<string>("");
-  const [phoneIn, setPhoneIn] = useState<number>(0);
+  const [phoneIn, setPhoneIn] = useState<string>("");
   const [subjectIn, setSubjectIn] = useState<string>("");
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  
+    try {
+      if (!nameIn || !wechatIn || !phoneIn || !subjectIn) {
+        alert("Phone # must be a number. Please fill in all fields.");
+        return;
+      }
+  
+      const response = await axios.post(
+        'http://localhost:5000/email',
+        {
+          nameIn,
+          wechatIn,
+          phoneIn,
+          subjectIn,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          timeout: 10000, // 10 second timeout
+        }
+      );
+  
+      setNameIn("");
+      setWechatIn("");
+      setPhoneIn("");
+      setSubjectIn("");
+  
+      if (response.status === 201) {
+        alert("Submission successful.");
+      }
+    } catch (error: any) {
+      alert(
+        error.response?.data?.error ||
+        "Error during submission. Please try again."
+      );
+    }
+  };
 
   return (
     <div className="bg-blue-900 h-full min-h-screen w-full">
@@ -38,7 +79,7 @@ export default function ContactUs() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center bg-cyan-500 w-5/12 h-auto p-10 -mt-10 z-0">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center bg-cyan-500 w-5/12 h-auto p-10 -mt-10 z-0">
           <h1 className="text-white text-3xl mt-10 font-bold">
             联系我们
           </h1>
@@ -48,22 +89,20 @@ export default function ContactUs() {
           />
           <input className="mt-3 w-2/3 h-12 p-4 text-gray-700"
             placeholder="您的微信号"
-            onChange={(event)=>{setNameIn(event.target.value);}}
+            onChange={(event)=>{setWechatIn(event.target.value);}}
           />
           <input className="mt-3 w-2/3 h-12 p-4 text-gray-700"
             placeholder="您的手机号码"
-            onChange={(event)=>{setNameIn(event.target.value);}}
+            onChange={(event)=>{setPhoneIn(event.target.value);}}
           />
           <input className="mt-3 w-2/3 h-12 p-4 text-gray-700"
             placeholder="想试听的课程"
-            onChange={(event)=>{setNameIn(event.target.value);}}
+            onChange={(event)=>{setSubjectIn(event.target.value);}}
           />
-          <button className="bg-red-500 rounded-lg w-28 h-10 mt-5 hover:border text-white font-bold hover:border-white"
-            // onClick={createPost} make flask backend later
-          >
+          <button className="bg-red-500 rounded-lg w-28 h-10 mt-5 hover:border text-white font-bold hover:border-white">
             立即领取
           </button>
-        </div>
+        </form>
       </div>
     </div>
   )

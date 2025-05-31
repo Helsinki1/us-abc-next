@@ -53,7 +53,7 @@ def email():
         message = f"New Customer: {name}\n\nWeChat: {wechat}\nPhone Number: {phone}\nInterested In: {subject}"
         
         # Send email
-        send_email("oustandingls@yahoo.ca", "NEW INTERESTED CUSTOMER", message)
+        send_email("outstandingls@yahoo.ca", "NEW INTERESTED CUSTOMER", message)
         
         return jsonify({"message": "Signup Successful"}), 201
         

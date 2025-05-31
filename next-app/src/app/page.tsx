@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import axios from "axios"
 import Image from "next/image"
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -14,7 +15,7 @@ export default function Home() {
 
   const [nameIn, setNameIn] = useState<string>("");
   const [wechatIn, setWechatIn] = useState<string>("");
-  const [phoneIn, setPhoneIn] = useState<number>(0);
+  const [phoneIn, setPhoneIn] = useState<string>("");
   const [subjectIn, setSubjectIn] = useState<string>("");
 
   const [index, setIndex] = useState<number>(0);
@@ -46,6 +47,49 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [imgList.length, index]);
 
+
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  
+    try {
+      if (!nameIn || !wechatIn || !phoneIn || !subjectIn) {
+        alert("Phone # must be a number. Please fill in all fields.");
+        return;
+      }
+  
+      const response = await axios.post(
+        'http://localhost:5000/email',
+        {
+          nameIn,
+          wechatIn,
+          phoneIn,
+          subjectIn,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          timeout: 10000, // 10 second timeout
+        }
+      );
+  
+      setNameIn("");
+      setWechatIn("");
+      setPhoneIn("");
+      setSubjectIn("");
+  
+      if (response.status === 201) {
+        alert("Submission successful.");
+      }
+    } catch (error: any) {
+      alert(
+        error.response?.data?.error ||
+        "Error during submission. Please try again."
+      );
+    }
+  };
+  
   return (
     <div className="bg-blue-600 h-full min-h-screen w-full">
       <div className="flex justify-center items-center px-4 relative w-full" style={{minHeight: '500px'}}>
@@ -172,7 +216,7 @@ export default function Home() {
           免费领取399元在线英语课
         </h1>
         
-        <div className="w-full max-w-md space-y-4">
+        <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
           <input 
             className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
             placeholder="您的名字"
@@ -187,18 +231,18 @@ export default function Home() {
             className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
             placeholder="您的手机号码"
             type="tel"
-            onChange={(event) => {setPhoneIn(Number(event.target.value));}}
+            onChange={(event) => {setPhoneIn(event.target.value);}}
           />
           <input 
             className="w-full h-14 p-4 text-gray-600 text-lg rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
             placeholder="想试听的课程"
             onChange={(event) => {setSubjectIn(event.target.value);}}
           />
-        </div>
         
-        <button className="bg-red-500 hover:bg-red-600 rounded-lg px-8 py-3 mt-8 text-white font-bold text-lg transition-colors shadow-lg hover:shadow-xl">
-          立即领取
-        </button>
+          <button className="bg-red-500 hover:bg-red-600 rounded-lg px-8 py-3 mt-8 text-white font-bold text-lg transition-colors shadow-lg hover:shadow-xl">
+            立即领取
+          </button>
+        </form>
       </div>
 
       <div className="bg-slate-300 w-full h-24"></div>
