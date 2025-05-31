@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Configure CORS for the entire app
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
+        "origins": ["https://us-abc-next-git-main-helsinki1s-projects.vercel.app", "https://usabclearning.com", "https://www.usabclearning.com"],
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]
     }

@@ -19,10 +19,10 @@ USER_EMAIL = os.getenv("GMAIL_USER")
 auth_bp = Blueprint('auth', __name__)
 
 # Configure CORS for the blueprint
-CORS(auth_bp, origins=["http://localhost:3000", "http://127.0.0.1:3000"])
+CORS(auth_bp, origins=["https://us-abc-next-git-main-helsinki1s-projects.vercel.app", "https://usabclearning.com", "https://www.usabclearning.com"])
 
 @auth_bp.route('/email', methods=['POST', 'OPTIONS'])
-@cross_origin(origins=["http://localhost:3000", "http://127.0.0.1:3000"])
+@cross_origin(origins=["https://us-abc-next-git-main-helsinki1s-projects.vercel.app", "https://usabclearning.com", "https://www.usabclearning.com"])
 def email():
     # Handle preflight OPTIONS request
     if request.method == 'OPTIONS':
