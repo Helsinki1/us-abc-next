@@ -72,12 +72,13 @@ export default function Courses() {
 
   return (
     <div className="bg-blue-100 h-full min-h-screen w-full">
-      <div className="relative w-full" style={{minHeight: '500px'}}>
+      <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px]">
         <Image
             src="/coursesBanner.jpg"
             alt="Courses Banner"
             fill
             className="object-cover w-full h-full"
+            priority
         />
       </div>
 

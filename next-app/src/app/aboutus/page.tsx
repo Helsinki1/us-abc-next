@@ -110,7 +110,8 @@ export default function AboutUs() {
 
   return (
     <div className="bg-slate-50 h-full min-h-screen w-full items-center">
-      <div className="relative w-full" style={{minHeight: '500px'}}>
+      {/* Banner - responsive height */}
+      <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px]">
         <Image
           src="/aboutus/aboutusBanner.jpg"
           alt="banner"
@@ -120,23 +121,23 @@ export default function AboutUs() {
         />
       </div>
 
-
-      <div className="bg-slate-50 flex flex-col h-auto w-3/4 pt-14 pb-14 pl-8 pr-8 ml-52">
-        <h1 className="text-3xl font-bold text-orange-500 mb-6 text-left">我们的外教团队</h1>
-        <h2 className="text-xl font-bold text-orange-500 text-left mb-4">US abc团队的成员包括：</h2>
-        <ul className="space-y-3 text-xl text-gray-800">
+      {/* Main content - responsive padding and width */}
+      <div className="bg-slate-50 flex flex-col h-auto w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-14">
+        <h1 className="text-2xl sm:text-3xl font-bold text-orange-500 mb-4 sm:mb-6 text-left">我们的外教团队</h1>
+        <h2 className="text-lg sm:text-xl font-bold text-orange-500 text-left mb-3 sm:mb-4">US abc团队的成员包括：</h2>
+        <ul className="space-y-2 sm:space-y-3 text-base sm:text-lg lg:text-xl text-gray-800">
           <li className="text-left">• 来自美国各地的中小学教师，拥有丰富的课堂教育经验。</li>
           <li className="text-left">• 来自哈佛、麻省理工学院等顶尖高校的学霸，熟知考试技巧，擅长引导学生如何在考试中取得高分。</li>
           <li className="text-left">• 资深的双语语言培训师和课程设计师。懂得母语为中文的学生学习英语时会遇到的问题，有针对性的攻破语法难关，帮助学生改善口语和提高学校英语考试成绩。</li>
         </ul>
         
-        <p className="text-xl text-gray-800 text-left mt-6 leading-relaxed">
+        <p className="text-base sm:text-lg lg:text-xl text-gray-800 text-left mt-4 sm:mt-6 leading-relaxed">
           我们的教育和语言背景以及丰富的美国当地的教学资源使我们能够为学生提供高质量的课程，帮助学生在语言学习和学术发展上取得优异成绩。
         </p>
       </div>
 
-
-      <div className="bg-sky-600 pl-60 pr-60 pt-16 pb-24 space-y-16">
+      {/* Teacher grids - responsive padding */}
+      <div className="bg-sky-600 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60 py-8 sm:py-12 lg:py-16 space-y-8 sm:space-y-12 lg:space-y-16">
         <TeacherGrid teachers={teachersData1}></TeacherGrid>
         <TeacherGrid teachers={teachersData2}></TeacherGrid>
         <TeacherGrid teachers={teachersData3}></TeacherGrid>

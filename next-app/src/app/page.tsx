@@ -91,17 +91,18 @@ export default function Home() {
   
   return (
     <div className="bg-blue-600 h-full min-h-screen w-full">
-      <div className="flex justify-center items-center px-4 relative w-full" style={{minHeight: '500px'}}>
+      {/* Hero Carousel - Responsive height and button positioning */}
+      <div className="flex justify-center items-center px-2 sm:px-4 relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px]">
         <button
           onClick={() => changeImage((index === 0) ? imgList.length - 1 : index - 1)}
-          className="absolute left-4 z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+          className="absolute left-2 sm:left-4 z-10 bg-gray-800 text-white p-1.5 sm:p-2 rounded-full hover:bg-gray-700 transition-colors"
         >
           <svg
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-4 h-4 sm:w-6 sm:h-6"
           >
             <path
               strokeLinecap="round"
@@ -121,14 +122,14 @@ export default function Home() {
         />
         <button
           onClick={() => changeImage((index === imgList.length - 1) ? 0 : index + 1)}
-          className="absolute right-4 z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+          className="absolute right-2 sm:right-4 z-10 bg-gray-800 text-white p-1.5 sm:p-2 rounded-full hover:bg-gray-700 transition-colors"
         >
           <svg
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-4 h-4 sm:w-6 sm:h-6"
           >
             <path
               strokeLinecap="round"
@@ -138,6 +139,7 @@ export default function Home() {
           </svg>
         </button>
       </div>
+
       
       <div className="bg-slate-200 flex flex-col px-8 md:px-16 lg:px-24 xl:px-40 space-y-6 pt-14 pb-14 items-center">
         {/* First Section - Text + Video */}
