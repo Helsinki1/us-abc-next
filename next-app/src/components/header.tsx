@@ -3,14 +3,14 @@ import Image from "next/image"
 
 export default function Header() {
   return (
-    <div className="bg-blue-100 fg-white flex items-center justify-between py-4" style={{padding: '0.8rem 7rem'}}>
+    <div className="bg-blue-100 fg-white flex items-center justify-between py-[0.2rem] px-[1.5rem] sm:px-[4rem] md:px-[6rem] lg:px-[7rem]"> 
       <Link href="/" className="flex-shrink-0">
         <Image
           src="/logo-removebg.png"
           alt="logo"
           width={180}
           height={60}
-          className="h-12 sm:h-16 lg:h-20 w-auto"
+          className="h-12 sm:h-14 lg:h-16 w-auto"
         />
       </Link>
       <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-8">

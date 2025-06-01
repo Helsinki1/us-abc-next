@@ -1,6 +1,6 @@
 import React from 'react';
-import TeacherGrid from '../../../components/teachergrid'
-import { Teacher } from '../../../components/teachergrid'
+import TeacherGrid from '../../components/teachergrid'
+import { Teacher } from '../../components/teachergrid'
 import Image from "next/image"
 
 export default function AboutUs() {

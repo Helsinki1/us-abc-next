@@ -16,8 +16,8 @@ interface TeacherGridProps {
 
 const TeacherGrid: React.FC<TeacherGridProps> = ({ teachers }) => {
   return (
-    <div className="px-6 py-12 md:px-12 lg:px-16 ">
-      <div className="flex flex-wrap gap-8 max-w-7xl mx-auto">
+    <div className="px-6 py-12 md:px-12 lg:px-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {teachers.map((teacher) => (
           <div key={teacher.id} className="text-center items-center flex flex-col">
             {/* Profile Image */}
@@ -32,17 +32,14 @@ const TeacherGrid: React.FC<TeacherGridProps> = ({ teachers }) => {
                 />
               </div>
             </div>
-            
             {/* Name */}
             <h3 className="text-white text-xl font-bold mb-2">
               {teacher.name}
             </h3>
-            
             {/* Title */}
             <h4 className="text-white text-base font-medium mb-4">
               {teacher.title}
             </h4>
-            
             {/* Description */}
             <p className="text-white text-sm leading-relaxed max-w-md break-words text-left">
               {teacher.description}
